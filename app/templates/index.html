@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Spotify Top 100 Track Classifier</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            font-family: 'Roboto', sans-serif;
+            color: #ffffff;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 50px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .logo img {
+            width: 50%;
+            max-width: 300px;
+            margin: 0 auto 30px;
+            display: block;
+        }
+
+        h1 {
+            font-weight: 700;
+            color: #1DB954;
+            margin-bottom: 30px;
+        }
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            color: #000;
+        }
+
+        button {
+            background-color: #1DB954;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #14833b;
+        }
+
+        a {
+            color: #1DB954;
+            text-decoration: none;
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .track-details {
+            margin-top: 20px;
+            color: #ffffff;
+        }
+
+        .track-details img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .track-details p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .track-details h3 {
+            font-weight: 500;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        iframe {
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .prediction-top-100 {
+            color: #1DB954;
+        }
+
+        .prediction-not-top-100 {
+            color: #FF5733;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='Spotify_Full_Logo_RGB_Green.png') }}" alt="Spotify Logo">
+        </div>
+        <h1>Spotify Top 100 Track Classifier</h1>
+        <form method="post" action="/predict">
+            <div class="form-group">
+                <input type="text" class="form-control" name="track-content" placeholder="Enter track name, track name with artist name, or track ID" value="{{trackId}}">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a href="/">Reset</a>
+            </div>
+        </form>
+
+        {% if prediction %}
+        <h2 class="{% if 'Top 100 Track' in prediction %}prediction-top-100{% else %}prediction-not-top-100{% endif %}">{{ prediction }}</h2>
+        {% endif %}
+
+        {% if track_name %}
+        <!-- Spotify Embed Iframe -->
+        <iframe src="https://open.spotify.com/embed/track/{{ trackId }}?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <div class="track-details">
+            <h3>Track Details</h3>
+            <p><strong>Track Name:</strong> {{ track_name }}</p>
+            <p><strong>Artist Name:</strong> {{ artist_name }}</p>
+            <p><strong>Album Name:</strong> {{ album_name }}</p>
+            <p><strong>Release Date:</strong> {{ release_date }}</p>
+            <img src="{{ image_url }}" alt="Album Image" width="300">
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
