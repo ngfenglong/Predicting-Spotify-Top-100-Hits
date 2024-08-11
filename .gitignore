@@ -1,0 +1,8 @@
+# Ignore all mlruns folders
+mlruns/
+
+# Ignore all .ipynb_checkpoints folders
+.ipynb_checkpoints/
+
+# Ingore all .DS_Store
+.DS_Store
