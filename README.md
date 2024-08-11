@@ -1,5 +1,7 @@
 # Predicting Spotify Top 100 Hits
 
+![Spotify Logo](https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_Green.png)
+
 This repository contains the submission for the "Predicting Spotify Top 100 Hits" project, part of the ITI105 Machine Learning Project module in the Specialist Diploma in Applied Artificial Intelligence at Nanyang Polytechnic.
 
 ## Project Overview
