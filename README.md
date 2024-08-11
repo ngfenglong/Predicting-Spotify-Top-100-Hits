@@ -43,7 +43,11 @@ The project files are organized as follows:
 ├── notebooks
 │   └── project_workfile.ipynb        # Jupyter notebook for EDA and model training
 ├── app
-│   └──                             # Web application code
+│   ├── model                           # Model files for the web application
+│   ├── static                          # Static files (CSS, JavaScript, images)
+│   ├── templates                       # HTML templates for the web application
+│   ├── app.py                          # Web application code
+│   └── requirements.txt                # List of dependencies
 └── README.md
 ```
 
