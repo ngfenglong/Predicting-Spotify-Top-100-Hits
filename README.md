@@ -18,7 +18,9 @@ You can test the prototype of the web application [here](https://spotify-top-100
 
 The following diagram illustrates the flow of the application, from the frontend's API call to the backend, through the various steps such as querying the Spotify API, processing the data, scaling, and finally predicting whether a song will make it to Spotify's Top 100 using the machine learning model.
 
-![Application Architecture](docs/images/application_architecture.png)
+<div align="center">
+    <img src="docs/images/application_architecture.png" alt="Application Architecture" width="600"/>
+</div>
 
 *Note: This image is for illustration purposes and describes the order of API calls, the data processing steps, and the prediction using the trained model.*
 
