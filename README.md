@@ -59,6 +59,9 @@ The project files are organized as follows:
 │   ├── templates                       # HTML templates for the web application
 │   ├── app.py                          # Web application code
 │   └── requirements.txt                # List of dependencies
+├── docs
+│   └── images
+│       └── application_architecture.png # Architecture diagram
 └── README.md
 ```
 
