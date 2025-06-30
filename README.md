@@ -2,7 +2,24 @@
 
 ![Spotify Logo](https://storage.googleapis.com/pr-newsroom-wp/1/2023/05/Spotify_Full_Logo_RGB_Green.png)
 
-This repository contains the submission for the "Predicting Spotify Top 100 Hits" project, part of the ITI105 Machine Learning Project module in the Specialist Diploma in Applied Artificial Intelligence at Nanyang Polytechnic.
+---
+
+### ⚠️ Deprecation Notice (as of 27 Nov 2024)
+
+As of **27 November 2024**, Spotify has updated its [Web API Policy](https://developer.spotify.com/blog/2024-11-27-changes-to-the-web-api) to **prohibit new applications from accessing key endpoints**, including:
+
+- `Get Track’s Audio Features`
+- `Audio Analysis`, `Recommendations`, `Related Artists`, and several other endpoints
+
+> **Importantly**, Spotify's policy now states that:  
+> _“Spotify content may not be used to train machine learning or AI models.”_
+
+As a result, this application can **no longer fetch audio features for new tracks** nor support user input-based prediction via the Spotify API. The deployed web application is therefore **no longer functional** and has been taken offline.
+
+The repository remains public for **educational and reference purposes only**, and showcases the architecture and classical ML approach used during development prior to the policy change.
+
+---
+
 
 ## Project Overview
 
@@ -10,9 +27,8 @@ The objective of this project is to develop a machine learning model capable of 
 
 ## Web Application
 
-You can test the prototype of the web application [here](https://spotify-top-100-track-classifier.onrender.com/).
+*Note: The web application has been taken down due to Spotify's updated policy restricting access to audio features. This repository is now archived for learning and demonstration purposes only.*
 
-*Note: This is a prototype and is intended for demonstration purposes only. The performance and features may not fully represent a production-ready system.*
 
 ## Application Architecture
 
